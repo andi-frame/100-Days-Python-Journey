@@ -25,7 +25,7 @@ letters = [a for a in string.ascii_letters]
 is_continue = 1
 while is_continue == 1:
     status = input("Please type 'encode' to encrypt, type 'decode' to decrypt:\n")
-    if status != ('encode' or 'decode'):
+    if status != 'encode' or status != 'decode':
         status = input(f"There is no program {status}.\nPlease type 'encode' to encrypt, type 'decode' to decrypt:\n")
 
     user_message = input("Please type your message:\n")
