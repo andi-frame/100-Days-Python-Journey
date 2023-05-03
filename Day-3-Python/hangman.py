@@ -22,7 +22,7 @@ while True:
     print(f"|{live} live left|")
     print(*letters_guessed)
     
-    user_guess = input("Enter the letter you guess: ")
+    user_guess = input("Enter the letter you guess: ").lower()
     
     if user_guess in word:
         index_guessed = [i for i in range(len(word)) if word[i] == user_guess]
