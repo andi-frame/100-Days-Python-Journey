@@ -1,6 +1,5 @@
 import os
 import random
-from time import sleep
 from hangman_stages import stages
 from hangman_words import word_list
 
