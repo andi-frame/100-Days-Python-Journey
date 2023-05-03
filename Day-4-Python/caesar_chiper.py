@@ -29,7 +29,7 @@ while is_continue == 1:
         status = input(f"There is no program {status}.\nPlease type 'encode' to encrypt, type 'decode' to decrypt:\n")
 
     user_message = input("Please type your message:\n")
-    shift_num = int(input("Please type the key number:\n"))
+    shift_num = int(input("Please type the key number:\n")) % 26
 
     print(f"This is your {status}d message:\n{endecode(user_message, shift_num, status)}")
 
