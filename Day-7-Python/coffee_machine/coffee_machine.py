@@ -83,7 +83,7 @@ while is_continue:
         if user_money > menu[user_input]['money']:
             money += user_money
             print(f"Here is your {user_input} coffee. Enjoy!!")
-            print(f"Here is ${user_money - menu[user_input]['money']} dollars in change.\n")
+            print(f"Here is ${round((user_money - menu[user_input]['money']), 2)} dollars in change.\n")
             continue
 
         if user_money < menu[user_input]['money']:
