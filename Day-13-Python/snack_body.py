@@ -10,13 +10,14 @@ class Snack():
             snack.goto(x = -(i*20), y = 0)
             self.all_snack.append(snack)
             
-    def len_plus(self):
+    def len_plus(self, position):
         snack = Turtle(shape = 'square')
         snack.shapesize(1, 1)
         snack.penup()
         snack.color("white")
+        snack.goto(position)
         self.all_snack.append(snack)
-
+    
     def up(self):
         if self.all_snack[0].heading() != 270:
             self.all_snack[0].setheading(90)
@@ -37,4 +38,3 @@ class Snack():
         for i in range(len(self.all_snack)-1, 0, -1):
             self.all_snack[i].goto(self.all_snack[i-1].pos())
         self.all_snack[0].forward(20)
-    
