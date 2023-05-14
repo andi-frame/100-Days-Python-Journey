@@ -1,6 +1,5 @@
 from turtle import Turtle
 import random
-import time
 
 
 class Blade(Turtle):
