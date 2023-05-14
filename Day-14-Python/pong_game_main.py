@@ -1,6 +1,6 @@
 from turtle import Screen
 from pong_tool import Blade, Ball, Net, Scoreboard
-
+import time
 
 # Make the blade
 # Make the ball
@@ -13,13 +13,18 @@ from pong_tool import Blade, Ball, Net, Scoreboard
 
 
 screen = Screen()
+screen.title("Ping-Pong")
 screen.bgcolor("black")
 screen.setup(width = 800, height = 600)
 screen.listen()
+screen.tracer(0)
 
+# Function
+def collision_with_blade():
+    return (ball.distance(left_blade.pos()) <= 50 and ball.xcor() == -360) or (ball.distance(right_blade.pos()) <= 50 and ball.xcor() == 360)
 
 # Tool
-left_blade = Blade(-390, 0)
+left_blade = Blade(-380, 0)
 right_blade = Blade(380, 0)
 for i in range(15):
     net = Net(-280 + i*40)
@@ -30,9 +35,11 @@ right_scoreboard = Scoreboard(score = right_score, xcor = 180)
 ball = Ball()
 
 
-
 game_is_on = True
 while game_is_on:
+    time.sleep(ball.ball_speed)
+    screen.update()
+
     # Blade move
     screen.onkeypress(key = "w", fun = left_blade.up)
     screen.onkeypress(key = "s", fun = left_blade.down)
@@ -44,24 +51,32 @@ while game_is_on:
 
     # Collision with upper-lower wall
     if ball.ycor() >= 280 or ball.ycor() <= -280:
-        ball.setheading(-ball.heading())
+        ball.wall_collision()
 
     # Collision with blade
-    if ball.distance(left_blade.pos()) <= 25 or ball.distance(right_blade.pos()) <= 25:
-        ball.setheading(-ball.heading() - 180)
-        ball.forward(8)
+    if collision_with_blade():
+        ball.blade_collision()
     
     # Make Score
     if ball.xcor() <= -410:
-        left_score += 1
-        left_scoreboard.clear()
-        left_scoreboard = Scoreboard(score = left_score, xcor = -180)
-        ball.refresh()
-    if ball.xcor() >= 400:
         right_score += 1
         right_scoreboard.clear()
         right_scoreboard = Scoreboard(score = right_score, xcor = 180)
         ball.refresh()
+        
+    if ball.xcor() >= 400:
+        left_score += 1
+        left_scoreboard.clear()
+        left_scoreboard = Scoreboard(score = left_score, xcor = -180)
+        ball.refresh()
+    
+    # Winner
+    if left_score == 10:
+        game_is_on = False
+        left_scoreboard.winner("Ping")
+    if right_score == 10:
+        game_is_on = False
+        right_scoreboard.winner("Pong")
 
 
 
