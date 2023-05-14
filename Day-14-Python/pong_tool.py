@@ -1,5 +1,6 @@
 from turtle import Turtle
 import random
+import time
 
 
 class Blade(Turtle):
@@ -7,7 +8,7 @@ class Blade(Turtle):
         super().__init__()
         self.penup()
         self.shape("square")
-        self.shapesize(3, 1)
+        self.shapesize(4, 1)
         self.color("white")
         self.xcor = xcor
         self.ycor = ycor
@@ -20,7 +21,7 @@ class Blade(Turtle):
     def down(self):
         self.goto(self.xcor, (self.ycor - 40)) # type: ignore
         self.ycor -= 40 # type: ignore
-
+    
 
 class Ball(Turtle):
     def __init__(self):
@@ -29,17 +30,29 @@ class Ball(Turtle):
         self.shape("circle")
         self.shapesize(1, 1)
         self.color("white")
-        self.random_heading()
+        self.speed(3)
+        self.x = random.randint(-10, 10)
+        self.y = random.randint(-10, 10)
+        self.ball_speed = 0.02
 
     def move(self):
-        self.forward(5)
+        self.new_x = self.xcor() + self.x
+        self.new_y = self.ycor() + self.y
+        self.goto(self.new_x, self.new_y)
+
+    def wall_collision(self):
+        self.y = -self.y
     
-    def random_heading(self):
-        self.setheading(random.randint(0,360))
+    def blade_collision(self):
+        self.x = -self.x
+        self.ball_speed *= 0.9
     
     def refresh(self):
-        self.home()
-        self.random_heading()
+        self.goto(0,0)
+        self.ball_speed = 0.01
+        self.x = random.randint(-10,10)
+        self.y = random.randint(-10,10)
+        self.move()
 
 
 class Net(Turtle):
@@ -60,4 +73,8 @@ class Scoreboard(Turtle):
         self.color("white")
         self.goto(xcor, 220)
         self.write(f"{score}", align= "center", font=("Arial", 40, "normal"))
+    
+    def winner(self, winner):
+        self.home()
+        self.write(f"The winner is {winner}", align= "center", font=("Arial", 40, "normal"))
         
