@@ -3,6 +3,7 @@ from tkinter import messagebox
 import secrets
 import string
 import random
+import pyperclip
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -25,6 +26,9 @@ def generate_password():
     password_generated = ''.join(list(set(pass_letters + pass_numbers + pass_symbols)))
     password_input.delete(0, END)
     password_input.insert(0, password_generated)
+
+    # COPY TO CLIPBOARD
+    pyperclip.copy(password_generated)
 
 
 
