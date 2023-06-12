@@ -25,7 +25,11 @@ letters = [a for a in string.ascii_letters]
 is_continue = 1
 while is_continue == 1:
     status = input("Please type 'encode' to encrypt, type 'decode' to decrypt:\n")
+<<<<<<< HEAD
     if status != 'encode' and status != 'decode':
+=======
+    while status != 'encode' and status != 'decode':
+>>>>>>> f07363d (first commit to local file of 100python)
         status = input(f"There is no program {status}.\nPlease type 'encode' to encrypt, type 'decode' to decrypt:\n")
 
     user_message = input("Please type your message:\n")
@@ -33,4 +37,8 @@ while is_continue == 1:
 
     print(f"This is your {status}d message:\n{endecode(user_message, shift_num, status)}")
 
+<<<<<<< HEAD
     is_continue = int(input("Do you want to go again? (1 for yes, 0 for no) (integer only):\n"))
+=======
+    is_continue = int(input("Do you want to go again? (1 for yes, 0 for no) (integer only):\n"))
+>>>>>>> f07363d (first commit to local file of 100python)

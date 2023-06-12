@@ -37,4 +37,8 @@ class Snack():
     def move(self):
         for i in range(len(self.all_snack)-1, 0, -1):
             self.all_snack[i].goto(self.all_snack[i-1].pos())
+<<<<<<< HEAD
         self.all_snack[0].forward(20)
+=======
+        self.all_snack[0].forward(20)
+>>>>>>> f07363d (first commit to local file of 100python)

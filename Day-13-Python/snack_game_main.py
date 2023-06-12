@@ -50,4 +50,8 @@ while game_is_on:
     screen.onkey(key = "Right", fun = snack.right)
     screen.onkey(key = "Left", fun = snack.left)
 
+<<<<<<< HEAD
 screen.exitonclick()
+=======
+screen.exitonclick()
+>>>>>>> f07363d (first commit to local file of 100python)

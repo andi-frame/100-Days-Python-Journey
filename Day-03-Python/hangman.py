@@ -43,4 +43,8 @@ if live == 0:
     print("You Lose!")
 else:
     print(stages[live])
+<<<<<<< HEAD
     print("You Win!")
+=======
+    print("You Win!")
+>>>>>>> f07363d (first commit to local file of 100python)

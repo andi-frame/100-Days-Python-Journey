@@ -80,4 +80,8 @@ while game_is_on:
 
 
 
+<<<<<<< HEAD
 screen.exitonclick()
+=======
+screen.exitonclick()
+>>>>>>> f07363d (first commit to local file of 100python)

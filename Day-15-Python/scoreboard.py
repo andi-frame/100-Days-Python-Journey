@@ -15,7 +15,11 @@ class Scoreboard(Turtle):
         self.write("Game Over.", align = "center", font = FONT)
     
     def winning(self):
+<<<<<<< HEAD
         self.home()
+=======
+        self.goto(0, 200)
+>>>>>>> f07363d (first commit to local file of 100python)
         self.write("You Win!", align = "center", font = FONT)
 
     def play_again(self, level):

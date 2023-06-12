@@ -14,12 +14,15 @@ car_manager = CarManager()
 scoreboard = Scoreboard(level)
 
 
+<<<<<<< HEAD
 # collision with car => done
 # winning condition => done
 # next stage
 # leveling => done
 
 
+=======
+>>>>>>> f07363d (first commit to local file of 100python)
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
@@ -30,25 +33,42 @@ while game_is_on:
     car_manager.move_car()
 
     for car in car_manager.all_car:
+<<<<<<< HEAD
         if car.distance(player) <= 25:
             game_is_on = False
             scoreboard.game_over()
     
+=======
+        if car.distance(player) <= 24:
+            game_is_on = False
+            scoreboard.game_over()
+
+>>>>>>> f07363d (first commit to local file of 100python)
     if player.ycor() >= 280:
         scoreboard.winning()
 
         if screen.textinput("Next Stage?", "Want to continue? 'y' or 'n'") == 'y':
+<<<<<<< HEAD
             for car in car_manager.all_car:
                 car.reset()
             level += 1
             scoreboard.play_again(level)
             player.play_again()
+=======
+            level += 1
+            scoreboard.play_again(level)
+            player.play_again()
+            car_manager.disappear_car()
+>>>>>>> f07363d (first commit to local file of 100python)
 
         elif screen.textinput("Next Stage?", "Want to continue? 'y' or 'n'") == 'n': 
             game_is_on = False
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f07363d (first commit to local file of 100python)
 screen.exitonclick()
 
 

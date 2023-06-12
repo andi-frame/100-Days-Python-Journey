@@ -15,4 +15,8 @@ def calculator(n, **kwargs):
     n *= kwargs["multiply"]
     print(n)
 
+<<<<<<< HEAD
 calculator(3, add = 3, multiply = 5)
+=======
+calculator(3, add = 3, multiply = 5)
+>>>>>>> f07363d (first commit to local file of 100python)

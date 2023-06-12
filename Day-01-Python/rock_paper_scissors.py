@@ -22,4 +22,8 @@ while 1==1:
     if a == 1:
         continue
     if a == 2:
+<<<<<<< HEAD
         break
+=======
+        break
+>>>>>>> f07363d (first commit to local file of 100python)

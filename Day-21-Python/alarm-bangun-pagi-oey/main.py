@@ -107,4 +107,8 @@ reset_button = Button(text = "Reset", highlightbackground = YELLOW, command = re
 reset_button.grid(row = 12, column = 3)
 
 
+<<<<<<< HEAD
 window.mainloop()
+=======
+window.mainloop()
+>>>>>>> f07363d (first commit to local file of 100python)

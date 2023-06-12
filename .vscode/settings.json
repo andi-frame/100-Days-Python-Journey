@@ -1,0 +1,12 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.pythonPath": "C:\\\\python36\\\\python36.exe",
+    "code-runner.executorMap":
+    {
+        "python": "$pythonPath -u $fullFileName"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.formatting.provider": "none"
+}

@@ -19,6 +19,9 @@ class Player(Turtle):
     
     def play_again(self):
         self.goto(STARTING_POSITION)
+<<<<<<< HEAD
         self.setheading(90)
+=======
+>>>>>>> f07363d (first commit to local file of 100python)
     
 
