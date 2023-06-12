@@ -12,8 +12,4 @@ class Scoreboard(Turtle):
     
     def game_over(self):
         self.goto(0,0)
-<<<<<<< HEAD
         self.write("Game Over!", align= "center", font=("Arial", 18, "normal"))
-=======
-        self.write("Game Over!", align= "center", font=("Arial", 18, "normal"))
->>>>>>> f07363d (first commit to local file of 100python)

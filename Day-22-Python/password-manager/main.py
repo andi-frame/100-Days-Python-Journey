@@ -108,8 +108,4 @@ add_button = Button(text = "Add", width = 32, command = add, bg = "white", fg = 
 add_button.grid(row = 5, column = 2, columnspan = 2)
 
 
-<<<<<<< HEAD
 window.mainloop()
-=======
-window.mainloop()
->>>>>>> f07363d (first commit to local file of 100python)

@@ -24,8 +24,4 @@ new_button = Button(text = "new button!")
 new_button.grid(row = 1, column = 3)
 
 
-<<<<<<< HEAD
 window.mainloop()
-=======
-window.mainloop()
->>>>>>> f07363d (first commit to local file of 100python)

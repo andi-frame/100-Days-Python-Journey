@@ -100,8 +100,4 @@ while is_continue:
             continue
 
     else: 
-<<<<<<< HEAD
         print("Please insert the available command!")
-=======
-        print("Please insert the available command!")
->>>>>>> f07363d (first commit to local file of 100python)

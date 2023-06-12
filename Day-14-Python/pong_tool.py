@@ -76,8 +76,4 @@ class Scoreboard(Turtle):
     def winner(self, winner):
         self.home()
         self.write(f"The winner is {winner}", align= "center", font=("Arial", 40, "normal"))
-<<<<<<< HEAD
         
-=======
-        
->>>>>>> f07363d (first commit to local file of 100python)

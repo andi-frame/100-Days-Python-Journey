@@ -25,12 +25,8 @@ class CarManager():
 
     def move_car(self):
         for car in self.all_car:
-<<<<<<< HEAD
-            car.forward(MOVE_INCREMENT)
-=======
             car.forward(MOVE_INCREMENT)
     
     def disappear_car(self):
         for car in self.all_car:
             car.forward(650)
->>>>>>> f07363d (first commit to local file of 100python)

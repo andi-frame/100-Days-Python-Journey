@@ -82,8 +82,4 @@ while is_continue:
         if start_again():
             user_num = [random.choice(num) for i in range(1)]
             dealer_num = []
-<<<<<<< HEAD
             is_continue = True
-=======
-            is_continue = True
->>>>>>> f07363d (first commit to local file of 100python)
