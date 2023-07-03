@@ -42,10 +42,15 @@ customer = 0
 
 def is_sufficient(drink):
     for ingredient in menu[drink]:
-        if (menu[drink][ingredient] < init_ingredients[ingredient]):
+        print(ingredient)
+        if ingredient == 'money':
+            continue
+        if (menu[drink][ingredient] > init_ingredients[ingredient]):
             print(f"Sorry there is not enough {ingredient}\n")
     for ingredient in menu[drink]:
-        if (menu[drink][ingredient] < init_ingredients[ingredient]):
+        if ingredient == 'money':
+            continue
+        if (menu[drink][ingredient] > init_ingredients[ingredient]):
             return False
     return True
 
@@ -80,6 +85,7 @@ while is_continue:
         dimes = int(input("How many dimes: "))
         quarters = int(input("How many quarters: "))
         user_money = float((pennies*0.01) + (nickles*0.05) + (dimes*0.10) + (quarters*0.25))
+        print(f"Your money is {user_money}")
             
         if user_money == menu[user_input]['money']:
             money += user_money
@@ -87,7 +93,7 @@ while is_continue:
             continue
 
         if user_money > menu[user_input]['money']:
-            money += user_money
+            money += menu[user_input]['money']
             print(f"Here is your {user_input} coffee. Enjoy!!")
             print(f"Here is ${round((user_money - menu[user_input]['money']), 2)} dollars in change.\n")
             init_ingredients['water'] -= menu[user_input]['water']
