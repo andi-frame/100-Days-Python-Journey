@@ -1,6 +1,6 @@
 print('''
 ===================================
-!! WELCOME TO SIMPE CALCULATOR !!
+!! WELCOME TO SIMPLE CALCULATOR !!
 ===================================
 • Working on float numbers
 • Simple operations (+, -, *, /, %)
@@ -23,7 +23,7 @@ is_continue = True
 while is_continue:
     first_num = float(input("The first number: "))
     operation = input("Please choose the operation (+, -, *, /, %): ")
-    while operation != ('+' and '-' and '*' and '/' and '%'): 
+    while operation == ('+' and '-' and '*' and '/' and '%'): 
         print("Please input the available operation")
         operation = input("Please choose the operation (+, -, *, /, %): ")
     second_num = float(input("The second number: "))
