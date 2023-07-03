@@ -18,5 +18,5 @@ while is_continue:
         break
     else:
         drink_ordered = drink.find_drink(order)
-        if make_coffee.is_resource_sufficient(drink_ordered) and money.make_payment(drink_ordered.cost):
+        if make_coffee.is_resource_sufficient(drink_ordered) and money.make_payment(drink_ordered.cost): #type: ignore
             make_coffee.make_coffee(drink_ordered)
