@@ -18,7 +18,7 @@ def end_detail(user_num, dealer_num):
 
 def start_again():
     is_continue = True if input("Do you want to play The Blackjack again ('y' or 'n'): ") == "y" else False
-    os.system('clear')
+    os.system('cls')
     return is_continue
 
 def as_card_function(user):
@@ -30,7 +30,7 @@ def as_card_function(user):
 
 
 is_continue = True if input("Do you want to play The Blackjack ('y' or 'n'): ") == "y" else False
-os.system('clear')
+os.system('cls')
 while is_continue:
     print(text)
     user_num += [random.choice(num) for i in range(1)]
@@ -45,7 +45,7 @@ while is_continue:
         break
     if sum(user_num) == 21:
         end_detail(user_num, dealer_num)
-        print("BLACKJACK!!\n You!")
+        print("BLACKJACK!!\nYou!")
         if start_again():
             user_num = [random.choice(num) for i in range(1)]
             dealer_num = []
@@ -59,7 +59,7 @@ while is_continue:
     print(f"Dealer's first card: {dealer_num[0]}")
       
     is_continue = True if input("Type 'y' to get another card, type 'n' to pass: ").lower() == "y" else False
-    os.system('clear')
+    os.system('cls')
 
     if not is_continue:
         while sum(dealer_num) < 17:
