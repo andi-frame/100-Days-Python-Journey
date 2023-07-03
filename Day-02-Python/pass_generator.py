@@ -20,8 +20,9 @@ pass_numbers = ''.join(secrets.choice(numbers) for i in range(numbers_amount))
 pass_symbols = ''.join(secrets.choice(symbols) for i in range(symbols_amount))
 
 # THE_PASSWORD
-password = list(set(pass_letters + pass_numbers + pass_symbols))
-print(*password, sep = '')
+password = list(pass_letters + pass_numbers + pass_symbols)
+random.shuffle(password)
+print(''.join(password))
 
 # REGENERATE
 regenerate = int(input("Do you want to regenerate your password (1 for yes, 0 for no)? "))
@@ -29,8 +30,10 @@ while regenerate == 1:
     pass_letters = ''.join(secrets.choice(letters) for i in range(letters_amount))
     pass_numbers = ''.join(secrets.choice(numbers) for i in range(numbers_amount))
     pass_symbols = ''.join(secrets.choice(symbols) for i in range(symbols_amount))
-    new_password = list(set(pass_letters + pass_numbers + pass_symbols))
-    print(*new_password, sep = '')
+    password = list(pass_letters + pass_numbers + pass_symbols)
+    random.shuffle(password)
+    print(''.join(password))
+
     regenerate = int(input("Do you want to regenerate your password (1 for yes, 0 for no)? "))
     
 
@@ -38,5 +41,5 @@ while regenerate == 1:
 shuffle = int(input("Want to reshuffle (1 for yes, 0 for no)? "))
 while shuffle == 1:
     random.shuffle(password)
-    print(*password, sep = '')
+    print(''.join(password))
     shuffle = int(input("Want to reshuffle (1 for yes, 0 for no)? "))
