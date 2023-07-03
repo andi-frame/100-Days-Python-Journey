@@ -41,6 +41,7 @@ os.system('clear')
 if live == 0:
     print(stages[live])
     print("You Lose!")
+    print(f"The answer is {word}")
 else:
     print(stages[live])
     print("You Win!")
