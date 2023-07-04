@@ -65,7 +65,8 @@ def add():
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
-window.config(padx = 50, pady = 50, bg = "white")
+window.geometry('400x300')
+window.config(bg = "white")
 window.title("Password Manager")
 
 
@@ -104,7 +105,7 @@ password_input.grid(row = 4, column = 2)
 generate_password_button = Button(text = "Generate Password", command = generate_password, bg = "white", fg = "black", highlightbackground = "white")
 generate_password_button.grid(row = 4, column = 3)
 
-add_button = Button(text = "Add", width = 36, command = add, bg = "white", fg = "black", highlightbackground = "white")
+add_button = Button(text = "Add", width = 32, command = add, bg = "white", fg = "black", highlightbackground = "white")
 add_button.grid(row = 5, column = 2, columnspan = 3)
 
 window.mainloop()
