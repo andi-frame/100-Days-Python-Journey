@@ -89,11 +89,11 @@ password_label.grid(row = 4, column = 1)
 
 # Entries
 website_input = Entry(width = 35, bg = "white", fg = "black", highlightthickness = 0, insertbackground='black')
-website_input.grid(row = 2, column = 2, columnspan = 2)
+website_input.grid(row = 2, column = 2, columnspan = 3)
 website_input.focus()
 
 user_identity_input = Entry(width = 35, bg = "white", fg = "black", highlightthickness = 0, insertbackground='black')
-user_identity_input.grid(row = 3, column = 2, columnspan = 2)
+user_identity_input.grid(row = 3, column = 2, columnspan = 3)
 user_identity_input.insert(0, "andifarhan1094@gmail.com")
 
 password_input = Entry(width = 21, bg = "white", fg = "black", highlightthickness = 0, insertbackground='black')
@@ -101,11 +101,10 @@ password_input.grid(row = 4, column = 2)
 
 
 # Buttons
-generate_password_button = Button(text = "Generate Password", width = 10, command = generate_password, bg = "white", fg = "black", highlightbackground = "white")
+generate_password_button = Button(text = "Generate Password", command = generate_password, bg = "white", fg = "black", highlightbackground = "white")
 generate_password_button.grid(row = 4, column = 3)
 
-add_button = Button(text = "Add", width = 32, command = add, bg = "white", fg = "black", highlightbackground = "white")
-add_button.grid(row = 5, column = 2, columnspan = 2)
-
+add_button = Button(text = "Add", width = 36, command = add, bg = "white", fg = "black", highlightbackground = "white")
+add_button.grid(row = 5, column = 2, columnspan = 3)
 
 window.mainloop()
