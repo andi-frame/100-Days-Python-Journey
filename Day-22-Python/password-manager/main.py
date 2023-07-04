@@ -1,4 +1,5 @@
 from tkinter import * #type: ignore
+from tkinter import ttk
 from tkinter import messagebox
 import secrets
 import string
@@ -71,41 +72,44 @@ window.title("Password Manager")
 
 
 # Image
-canvas = Canvas(width = 200, height = 200, bg = "white", highlightthickness = 0)
+canvas = Canvas(master=window, width = 200, height = 200, bg = "white", highlightthickness = 0)
 file_logo = PhotoImage(file = "Day-22-Python/password-manager/logo.png")
 photo_logo = canvas.create_image(100, 100, image = file_logo)
 canvas.grid(row = 1, column = 2)
 
 
 # Labels
-website_label = Label(text = "Website: ", bg = "white", fg = "black")
+website_label = Label(master=window, text = "Website: ", bg = "white", fg = "black")
 website_label.grid(row = 2, column = 1)
 
-user_identity_label = Label(text = "Email/Username: ", bg = "white", fg = "black")
+user_identity_label = Label(master=window, text = "Email/Username: ", bg = "white", fg = "black")
 user_identity_label.grid(row = 3, column = 1)
 
-password_label = Label(text = "Password: ", bg = "white", fg = "black")
+password_label = Label(master=window, text = "Password: ", bg = "white", fg = "black")
 password_label.grid(row = 4, column = 1)
 
 
 # Entries
-website_input = Entry(width = 35, bg = "white", fg = "black", highlightthickness = 0, insertbackground='black')
+website_input = Entry(master=window, width = 35, bg = "white", fg = "black", highlightthickness = 0, insertbackground='black')
 website_input.grid(row = 2, column = 2, columnspan = 3)
 website_input.focus()
 
-user_identity_input = Entry(width = 35, bg = "white", fg = "black", highlightthickness = 0, insertbackground='black')
+user_identity_input = Entry(master=window, width = 35, bg = "white", fg = "black", highlightthickness = 0, insertbackground='black')
 user_identity_input.grid(row = 3, column = 2, columnspan = 3)
 user_identity_input.insert(0, "andifarhan1094@gmail.com")
 
-password_input = Entry(width = 21, bg = "white", fg = "black", highlightthickness = 0, insertbackground='black')
-password_input.grid(row = 4, column = 2)
+# Password frame
+password_frame = ttk.Frame(master = window)
+password_input = Entry(master=password_frame, width = 20, bg = "white", fg = "black", highlightthickness = 0, insertbackground='black')
+password_input.pack(side = 'left')
 
+generate_password_button = Button(master=password_frame, text = "Generate Password", font=('Arial', 7), command = generate_password, bg = "white", fg = "black", highlightbackground = "white")
+generate_password_button.pack(side = 'right')
 
-# Buttons
-generate_password_button = Button(text = "Generate Password", command = generate_password, bg = "white", fg = "black", highlightbackground = "white")
-generate_password_button.grid(row = 4, column = 3)
+password_frame.grid(row = 4, column = 2, columnspan = 3)
 
-add_button = Button(text = "Add", width = 32, command = add, bg = "white", fg = "black", highlightbackground = "white")
+# Add button
+add_button = Button(master=window, text = "Add", width = 29, command = add, bg = "white", fg = "black", highlightbackground = "white")
 add_button.grid(row = 5, column = 2, columnspan = 3)
 
 window.mainloop()
