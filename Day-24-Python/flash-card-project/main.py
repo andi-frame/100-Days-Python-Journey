@@ -11,11 +11,11 @@ BACKGROUND_COLOR = "#B1DDC6"
 def back_card():
     canvas.itemconfig(card, image = photo_card_back)
     canvas.itemconfig(language, text = "English", fill = "white")
-    word = words[random.randrange(len(words))]["English"]
+    word = words[random_sequence]["English"]
     canvas.itemconfig(origin_word, text = word, fill = "white")
 
 def front_card():
-    global word, df, words
+    global word, df, words, to_back_card, random_sequence
     # check if words_to_learn.csv is exist
     if os.path.exists("Day-24-Python/flash-card-project/data/words_to_learn.csv"):
         df = pd.read_csv("Day-24-Python/flash-card-project/data/words_to_learn.csv")
@@ -24,24 +24,29 @@ def front_card():
     words = df.to_dict(orient="records")
     canvas.itemconfig(card, image = photo_card_front)
     canvas.itemconfig(language, text = "French", fill = "black")
-    word = words[random.randrange(len(words))]["French"]
+    random_sequence = random.randrange(len(words))
+    word = words[random_sequence]["French"]
     canvas.itemconfig(origin_word, text = word, fill = "black")
-    canvas.after(3000, back_card)
+    to_back_card = canvas.after(3000, back_card)
 
 def right():
     # Make words_to_learn.csv but remove the current word
     global df, word
     df = df.drop(df[df.French == word].index)
     df.to_csv("Day-24-Python/flash-card-project/data/words_to_learn.csv", index=False)
+    window.after_cancel(to_back_card)
     front_card()
 
 def wrong():
+    window.after_cancel(to_back_card)
     front_card()
 
 def on_closing():
     if messagebox.askyesno("Quit", "Do you want to delete your progress?"):
         if os.path.exists("Day-24-Python/flash-card-project/data/words_to_learn.csv"):
             os.remove("Day-24-Python/flash-card-project/data/words_to_learn.csv")
+    canvas.after_cancel(to_back_card)
+    window.quit()  # Terminate the main window event loop
     window.destroy()
 
 #--------------------------UI SETUP--------------------------
