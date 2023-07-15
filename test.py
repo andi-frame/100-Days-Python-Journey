@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import * #type: ignore
 import time
 import random
 
