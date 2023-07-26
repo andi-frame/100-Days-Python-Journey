@@ -4,7 +4,7 @@ import datetime as dt
 from email.mime.text import MIMEText
 
 my_email = "andifarhan1094@gmail.com"
-password = "mmmbtchpwvufbnjj"
+password = "abc"
 
 with open("Day-25-Python/motivational_mail/quotes.txt", encoding = "utf-8") as quotes:
     quotes_data = quotes.readlines()

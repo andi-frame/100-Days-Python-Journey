@@ -5,7 +5,7 @@ import smtplib
 import random
 
 my_email = "andifarhan1094@gmail.com"
-password = "mmmbtchpwvufbnjj"
+password = "abc"
 
 # Now Date
 now = dt.datetime.now()
@@ -14,9 +14,12 @@ month_now = now.month
 
 # Target
 birthday = pd.read_csv("Day-25-Python/automated_birthday_wisher/birthdays.csv")
-target = birthday[(birthday["month"]==month_now) & (birthday["day"]==day_now)]
-target_email = target.iloc[0]["email"]
-target_name = target.iloc[0]["name"]
+try:
+    target = birthday[(birthday["month"]==month_now) & (birthday["day"]==day_now)]
+    target_email = target.iloc[0]["email"]
+    target_name = target.iloc[0]["name"]
+except:
+    raise SystemExit("None of your friend in the list are having a birthday")
 
 # Open template
 letter = ["letter_1.txt", "letter_2.txt", "letter_3.txt"]
