@@ -8,7 +8,7 @@ password = "mmmbtchpwvufbnjj"
 
 with open("Day-25-Python/motivational_mail/quotes.txt", encoding = "utf-8") as quotes:
     quotes_data = quotes.readlines()
-    quote = quotes_data[random.randrange(0, len(quotes_data))]
+    quote = random.choice(quotes_data)
 
 now = dt.datetime.now()
 day_now = now.weekday()
